@@ -27,3 +27,6 @@ elem' a [] = False
 elem' a (x:xs)
     | a==x = True
     | otherwise = elem' a xs
+
+applyTwice :: (a -> a) -> a -> a
+applyTwice f x = f (f x)
