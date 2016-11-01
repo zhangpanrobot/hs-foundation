@@ -29,4 +29,4 @@ elem' a (x:xs)
     | otherwise = elem' a xs
 
 applyTwice :: (a -> a) -> a -> a
-applyTwice f x = f (f x)
+applyTwice f = f . f
