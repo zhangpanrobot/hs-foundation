@@ -28,5 +28,13 @@ elem' a (x:xs)
     | a==x = True
     | otherwise = elem' a xs
 
+-- quick sort
+quickSort :: (Ord a) => [a] -> [a]
+quickSort [] = []
+quickSort (x:xs) =
+  let smallerSort = quickSort [a | a <- xs, a <= x]
+      biggerSort = quickSort [a | a <- xs, a > x]
+  in smallerSort ++ [x] ++ biggerSort
+
 applyTwice :: (a -> a) -> a -> a
 applyTwice f = f . f
