@@ -38,3 +38,10 @@ quickSort (x:xs) =
 
 applyTwice :: (a -> a) -> a -> a
 applyTwice f = f . f
+
+-- add together current item of tow list
+sumList :: (Num a) => [a] -> [a] -> [a]
+-- TODO: add parttern matching
+-- sumList _ [] = _
+-- sumList [] _ = _
+sumList (x:xs) (y:ys) = map (\(a, b) -> a + b) $ zip (x:xs) (y:ys)
